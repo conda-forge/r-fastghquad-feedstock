@@ -1,4 +1,4 @@
-{% set version = '1.0' %}
+{% set version = "1.0.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fastGHQuad_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fastGHQuad/fastGHQuad_{{ version }}.tar.gz
-  sha256: 3253b1105dca2cbb96430895dc86bae611960155f557d6794fb9a9f7385251e6
+  sha256: 5cdc491b59176a628d9e814bde63e65d8ef947dce9df36ea28e2916e97b647fe
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -48,12 +48,10 @@ test:
 about:
   home: https://github.com/awblocker/fastGHQuad
   license: MIT
-  summary: Fast, numerically-stable Gauss-Hermite quadrature rules and utility functions for
-    adaptive GH quadrature. See Liu, Q. and Pierce, D. A. (1994) <doi:10.2307/2337136>
-    for a reference on these methods.
+  summary: Fast, numerically-stable Gauss-Hermite quadrature rules and utility functions for adaptive GH quadrature. See Liu, Q. and Pierce, D. A. (1994) <doi:10.2307/2337136> for a reference on these methods.
   license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
 extra:
